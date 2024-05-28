@@ -18,6 +18,7 @@ class FilterWordsDialog extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _labelText('Language'),
+                const SizedBox(height: 10),
                 _getLanguageFilter(context),
                 _labelText('Sorted by'),
                 _getSortedbyFilter(context),

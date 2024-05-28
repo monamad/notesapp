@@ -46,6 +46,7 @@ class _CustomAlartDialogState extends State<AddNewWordDialog> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       WriteCubit.get(context).addWord();
+                      GetWordCubit.get(context).getWords();
                     }
                   },
                 ),

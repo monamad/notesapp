@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wordapp/logic/get_cubit/get_word_cubit.dart';
+
 import 'package:wordapp/presentation/widgets/add_new_word.dart';
 import 'package:wordapp/presentation/widgets/language_filter.dart';
+import 'package:wordapp/presentation/widgets/words_grid.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -14,7 +14,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<GetWordCubit>(context).getWords();
   }
 
   @override
@@ -25,7 +24,12 @@ class _HomeViewState extends State<HomeView> {
         title: const Text('Word App'),
         centerTitle: true,
       ),
-      body: const LanguageFilter(),
+      body: const Column(
+        children: [
+          LanguageFilter(),
+          Expanded(child: WordsGrid()),
+        ],
+      ),
     );
   }
 

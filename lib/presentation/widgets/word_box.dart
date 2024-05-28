@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:wordapp/models/word_model/word.dart';
 
 class WordBox extends StatelessWidget {
-  final int color;
-  final String word;
+  final Word word;
 
-  const WordBox({super.key, required this.color, required this.word});
+  const WordBox({
+    super.key,
+    required this.word,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: Container(
+        padding: const EdgeInsets.all(6),
         decoration: BoxDecoration(
-          color: Color(color),
+          color: Color(word.color),
           borderRadius: BorderRadius.circular(20),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
-            'word ',
-            style: TextStyle(fontSize: 25),
+            word.theWord,
+            style: const TextStyle(fontSize: 25),
           ),
         ),
       ),

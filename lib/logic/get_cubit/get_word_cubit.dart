@@ -17,19 +17,16 @@ class GetWordCubit extends Cubit<GetWordState> {
   void setLanguageFilter(Languagefilter languagefilter) {
     this.languagefilter = languagefilter;
     getWords();
-    emit(GetWordInitial());
   }
 
   void setSortedby(Sortedby sortedby) {
     this.sortedby = sortedby;
     getWords();
-    emit(GetWordInitial());
   }
 
   void setSortorder(Sortorder sortorder) {
     this.sortorder = sortorder;
     getWords();
-    emit(GetWordInitial());
   }
 
   void getWords() async {

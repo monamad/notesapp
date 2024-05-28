@@ -19,6 +19,8 @@ class _CostumFormState extends State<CostumForm> {
       child: Form(
           key: widget.formKey,
           child: TextFormField(
+            maxLines: 2,
+            minLines: 1,
             autofocus: true,
             controller: _controller,
             onChanged: (value) => WriteCubit.get(context).updateWord(value),

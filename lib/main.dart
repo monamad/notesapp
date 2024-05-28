@@ -11,10 +11,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Hive.initFlutter();
 
   Hive.registerAdapter(WordAdapter());
   await Hive.openBox<List>(savedwords);
+  //await x.deleteFromDisk();
+
   runApp(const MyApp());
 }
 
@@ -27,12 +30,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => WriteCubit()),
         BlocProvider(
-          create: (context) => GetWordCubit(),
+          create: (context) => GetWordCubit()..getWords(),
         ),
       ],
       child: MaterialApp(
         theme: ThemesManager.appTheme(),
-        home: HomeView(),
+        home: const HomeView(),
       ),
     );
   }
