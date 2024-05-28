@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ExcptionWidget extends StatelessWidget {
   final IconData icondata;
@@ -15,7 +14,7 @@ class ExcptionWidget extends StatelessWidget {
         Icon(
           icondata,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Text(
