@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wordapp/logic/write_cubit/write_cubit_cubit.dart';
+import 'package:wordapp/logic/write_cubit/write_word_cubit.dart';
 
 class CostumForm extends StatefulWidget {
   final String label;

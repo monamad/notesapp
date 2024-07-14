@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wordapp/logic/get_cubit/get_word_cubit.dart';
-import 'package:wordapp/logic/write_cubit/write_cubit_cubit.dart';
+import 'package:wordapp/logic/write_cubit/write_word_cubit.dart';
 import 'package:wordapp/presentation/widgets/color_widget.dart';
 import 'package:wordapp/presentation/widgets/costum_form.dart';
 import 'package:wordapp/presentation/widgets/done_button.dart';
@@ -43,6 +43,7 @@ class _CustomAlartDialogState extends State<AddNewWordDialog> {
                   label: 'New Word',
                 ),
                 DoneButton(
+                  color: WriteCubit.get(context).color,
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       WriteCubit.get(context).addWord();

@@ -30,22 +30,24 @@ class Word {
         engexpamples: engexpamples);
   }
 
-  Word addExapmle(String word, bool isarabic) {
-    List<String> newExapmle = _intializeNewExample(isarabic, word);
-    newExapmle.add(word);
+  Word addExapmle(String example, bool isarabic) {
+    List<String> newExapmle = _intializeNewExample(isarabic);
+
+    newExapmle.add(example);
+
     return _returnNewExapmle(isarabic, newExapmle);
   }
 
   Word deletesimilarWord(int wordid, isarabic) {
-    List<String> newsimilarWords = _intializeNewSimilarWords(isarabic, theWord);
+    List<String> newsimilarWords = _intializeNewSimilarWords(isarabic);
     newsimilarWords.removeAt(wordid);
     return _returnNewSimilarWord(isarabic, newsimilarWords);
   }
 
-  Word addsimilarWord(String word, bool isarabic) {
+  Word addsimilarWord(String similarWord, bool isarabic) {
     List<String> newsimilarWords =
-        _intializeNewSimilarWords(isarabic, word); //with old data
-    newsimilarWords.add(word);
+        _intializeNewSimilarWords(isarabic); //with old data
+    newsimilarWords.add(similarWord);
     return _returnNewSimilarWord(isarabic, newsimilarWords);
   }
 
@@ -62,12 +64,12 @@ class Word {
   }
 
   Word deleteExapmle(int wordind, isarabic) {
-    List<String> newExapmle = _intializeNewSimilarWords(isarabic, theWord);
+    List<String> newExapmle = _intializeNewExample(isarabic);
     newExapmle.removeAt(wordind);
     return _returnNewExapmle(isarabic, newExapmle);
   }
 
-  List<String> _intializeNewSimilarWords(bool isarabic, String word) {
+  List<String> _intializeNewSimilarWords(bool isarabic) {
     if (isarabic) {
       return List.from(arsimilarWords);
     } else {
@@ -75,7 +77,9 @@ class Word {
     }
   }
 
-  List<String> _intializeNewExample(bool isarabic, String word) {
+  List<String> _intializeNewExample(
+    bool isarabic,
+  ) {
     if (isarabic) {
       return List.from(arexpamples);
     } else {
@@ -92,6 +96,6 @@ class Word {
         arsimilarWords: arsimilarWords,
         engsimilarWords: engsimilarWords,
         arexpamples: (isarabic) ? newExapmle : arexpamples,
-        engexpamples: (isarabic) ? arexpamples : newExapmle);
+        engexpamples: (isarabic) ? engexpamples : newExapmle);
   }
 }

@@ -1,4 +1,4 @@
-part of 'write_cubit_cubit.dart';
+part of 'write_word_cubit.dart';
 
 @immutable
 sealed class WriteCubitState {}

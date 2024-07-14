@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:wordapp/constans.dart';
 import 'package:wordapp/logic/get_cubit/get_word_cubit.dart';
-import 'package:wordapp/logic/write_cubit/write_cubit_cubit.dart';
+import 'package:wordapp/logic/write_cubit/write_word_cubit.dart';
 
 import 'package:wordapp/models/word_model/word_adapter.dart';
 import 'package:wordapp/presentation/styles/themes_manger.dart';
